@@ -1,0 +1,416 @@
+/* ==========================================================================
+   世界书分组管理（重制版）样式
+   ========================================================================== */
+
+/* ---------- 新建分组按钮（与"新建条目"并排） ---------- */
+.wi-group-create-controls {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 4px;
+}
+
+#wi_group_create_btn {
+    color: var(--SmartThemeEmColor);
+    background: color-mix(in srgb, var(--SmartThemeChatTintColor) 45%, transparent);
+    border-radius: 8px;
+    padding: 0 8px;
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color .15s ease, background .15s ease, transform .1s ease;
+}
+
+#wi_group_create_btn:hover {
+    color: var(--SmartThemeQuoteColor);
+    background: color-mix(in srgb, var(--SmartThemeChatTintColor) 75%, transparent);
+}
+
+#wi_group_create_btn:active {
+    transform: scale(.94);
+}
+
+/* ---------- 分组容器 ---------- */
+#wi_group_container {
+    display: block;
+    width: 100%;
+    padding: 6px 2px;
+}
+
+/* ---------- 分组卡片 ---------- */
+#wi_group_container .wi-group-card {
+    border: 1px solid color-mix(in srgb, var(--SmartThemeBorderColor) 70%, transparent);
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background: color-mix(in srgb, var(--SmartThemeBodyColor) 55%, transparent);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
+    overflow: hidden;
+    transition: box-shadow .2s ease;
+}
+
+#wi_group_container .wi-group-card:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
+}
+
+/* ---------- 分组头 ---------- */
+#wi_group_container .wi-group-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: linear-gradient(180deg,
+        color-mix(in srgb, var(--SmartThemeChatTintColor) 70%, transparent),
+        color-mix(in srgb, var(--SmartThemeChatTintColor) 38%, transparent));
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#wi_group_container .wi-group-expand {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--SmartThemeEmColor);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: background .15s ease, transform .2s ease;
+}
+
+#wi_group_container .wi-group-expand:hover {
+    background: color-mix(in srgb, var(--SmartThemeBorderColor) 35%, transparent);
+}
+
+#wi_group_container .wi-group-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-weight: 700;
+    font-size: calc(var(--mainFontSize) * 1.02);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--SmartThemeBodyColor);
+}
+
+/* 计数徽标 */
+#wi_group_container .wi-group-count {
+    flex: 0 0 auto;
+    min-width: 2em;
+    text-align: center;
+    font-size: calc(var(--mainFontSize) * 0.82);
+    font-weight: 600;
+    color: var(--SmartThemeEmColor);
+    background: color-mix(in srgb, var(--SmartThemeBorderColor) 30%, transparent);
+    border-radius: 999px;
+    padding: 2px 8px;
+}
+
+/* ---------- 分组操作按钮 ---------- */
+#wi_group_container .wi-group-actions {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+#wi_group_container .wi-group-action {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--SmartThemeEmColor);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: background .15s ease, color .15s ease, transform .1s ease;
+}
+
+#wi_group_container .wi-group-action:hover {
+    background: color-mix(in srgb, var(--SmartThemeBorderColor) 35%, transparent);
+    color: var(--SmartThemeQuoteColor);
+}
+
+#wi_group_container .wi-group-action:active {
+    transform: scale(.9);
+}
+
+#wi_group_container .wi-group-action-danger:hover {
+    color: #e5484d;
+    background: color-mix(in srgb, #e5484d 18%, transparent);
+}
+
+/* ---------- 分组体 ---------- */
+#wi_group_container .wi-group-body {
+    padding: 4px 6px;
+    border-top: 1px solid color-mix(in srgb, var(--SmartThemeBorderColor) 45%, transparent);
+}
+
+#wi_group_container .wi-group-card.collapsed .wi-group-body {
+    display: none;
+}
+
+#wi_group_container .wi-group-body .world_entry {
+    margin-bottom: 4px;
+}
+
+#wi_group_container .wi-group-body .world_entry:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- 条目"设置分组"按钮 ---------- */
+.wi-entry-group-btn {
+    color: var(--SmartThemeEmColor);
+    font-size: 14px;
+    min-width: 30px;
+    min-height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color .15s ease, background .15s ease;
+}
+
+.wi-entry-group-btn:hover {
+    color: var(--SmartThemeQuoteColor);
+    background: color-mix(in srgb, var(--SmartThemeBorderColor) 30%, transparent);
+}
+
+/* ---------- 通用文本输入弹窗 ---------- */
+.wi-prompt-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: min(360px, 72vw);
+    text-align: left;
+}
+
+.wi-prompt-dialog .wi-prompt-label {
+    font-weight: 600;
+    color: var(--SmartThemeEmColor);
+}
+
+.wi-prompt-dialog .wi-prompt-input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: calc(var(--mainFontSize) * 1.05);
+}
+
+/* ---------- 单条归组对话框 ---------- */
+.wi-assign-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: min(420px, 76vw);
+    text-align: left;
+}
+
+.wi-assign-dialog .wi-assign-new {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.wi-assign-dialog .wi-assign-new[hidden] {
+    display: none;
+}
+
+/* ---------- 批量选择对话框 ---------- */
+.wi-group-editor-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-height: 74vh;
+    text-align: left;
+}
+
+.wi-group-editor-card .wi-group-editor-list {
+    min-height: 140px;
+    max-height: 54vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid color-mix(in srgb, var(--SmartThemeBorderColor) 70%, transparent);
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.wi-group-editor-card .wi-group-editor-entry {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 4px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background .12s ease;
+}
+
+.wi-group-editor-card .wi-group-editor-entry:hover {
+    background: color-mix(in srgb, var(--SmartThemeChatTintColor) 50%, transparent);
+}
+
+.wi-group-editor-card .wi-group-editor-entry + .wi-group-editor-entry {
+    border-top: 1px solid color-mix(in srgb, var(--SmartThemeBorderColor) 40%, transparent);
+}
+
+.wi-group-editor-card .wi-group-editor-title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wi-group-editor-card .wi-group-editor-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+}
+
+.wi-group-editor-card .wi-group-editor-actions .menu_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 38px;
+}
+
+/* ---------- 移动端适配（手机浏览器 / Termux 场景） ---------- */
+@media (max-width: 720px) {
+    #wi_group_container .wi-group-head {
+        padding: 10px;
+    }
+    #wi_group_container .wi-group-expand {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    #wi_group_container .wi-group-action {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+    #wi_group_container .wi-group-title {
+        font-size: calc(var(--mainFontSize) * 1.08);
+    }
+    #wi_group_container .wi-group-count {
+        font-size: calc(var(--mainFontSize) * 0.9);
+        padding: 3px 10px;
+    }
+    .wi-entry-group-btn {
+        min-width: 36px;
+        min-height: 36px;
+        font-size: 15px;
+    }
+    #wi_group_create_btn {
+        min-height: 40px;
+        padding: 0 10px;
+    }
+    #wi_group_container .wi-group-body {
+        padding: 6px 8px;
+    }
+}
+
+
+/* ---------- 原生弹窗（wiDialog，兼容各版本 ST） ---------- */
+.wi-dialog-root {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+.wi-dialog-mask {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    pointer-events: auto;
+    animation: wiDialogFade .15s ease;
+}
+.wi-dialog-panel {
+    background: var(--SmartThemeBlurTintColor, var(--SmartThemeBodyColor));
+    color: var(--SmartThemeBodyColor);
+    border: 1px solid var(--SmartThemeBorderColor);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .4);
+    width: min(92vw, 420px);
+    max-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: wiDialogPop .18s cubic-bezier(.2, .9, .3, 1.2);
+}
+.wi-dialog-panel.wi-dialog-wide {
+    width: min(96vw, 640px);
+}
+.wi-dialog-title {
+    padding: 12px 16px;
+    font-size: calc(var(--mainFontSize) * 1.05);
+    font-weight: 700;
+    color: var(--SmartThemeEmColor);
+    border-bottom: 1px solid color-mix(in srgb, var(--SmartThemeBorderColor) 60%, transparent);
+    flex: 0 0 auto;
+}
+.wi-dialog-body {
+    padding: 14px 16px;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+}
+.wi-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 16px 14px;
+    border-top: 1px solid color-mix(in srgb, var(--SmartThemeBorderColor) 40%, transparent);
+    flex: 0 0 auto;
+}
+.wi-dialog-actions .menu_button {
+    min-height: 36px;
+    padding: 0 18px;
+    border-radius: 8px;
+}
+.wi-dialog-ok {
+    background: var(--SmartThemeEmColor);
+    color: var(--SmartThemeBodyColor);
+}
+.wi-prompt-dialog,
+.wi-assign-dialog,
+.wi-confirm-dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.wi-prompt-label {
+    font-size: calc(var(--mainFontSize) * 0.95);
+    color: var(--SmartThemeBodyColor);
+}
+.wi-prompt-input,
+.wi-assign-select {
+    width: 100%;
+    box-sizing: border-box;
+}
+@keyframes wiDialogFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes wiDialogPop {
+    from { transform: scale(.96); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

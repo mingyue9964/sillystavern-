@@ -1,0 +1,12 @@
+{
+    "display_name": "世界书分组管理（重制版）",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "mingyue9964",
+    "version": "1.0.0",
+    "homePage": "https://github.com/mingyue9964/sillystavern-",
+    "auto_update": true
+}
